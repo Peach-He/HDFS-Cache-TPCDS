@@ -1,0 +1,18 @@
+spark.master=yarn
+spark.executor.memory=22G
+spark.yarn.executor.memoryOverhead=5G
+spark.executor.instances=2
+spark.driver.memory=8G
+spark.executor.cores=5
+spark.driver.extraJavaOptions=-Xss8m
+spark.executor.extraJavaOptions=-Xss8m
+spark.hadoop.yarn.timeline-service.enabled=false
+#add
+spark.sql.crossJoin.enabled=true
+spark.sql.broadcastTimeout=7200
+spark.io.compression.codec=lzf
+
+spark.eventLog.enabled           true
+spark.eventLog.dir               hdfs://client01:8020/spark/applicationHistory
+spark.history.fs.logDirectory    hdfs://client01:8020/spark/applicationHistory
+

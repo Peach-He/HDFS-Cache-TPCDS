@@ -1,0 +1,23 @@
+#!/bin/bash
+OUTDIR=$1
+SAMPLING_INTERVAL=$2
+CMD=$3
+
+function run()
+{
+        source /root/ipmwatch/ipmw_vars.sh
+	ipmwatch 1 86400 -f $OUTDIR/ipmwatch &
+}
+
+function stop()
+{
+        source /root/ipmwatch/ipmw_vars.sh
+        ipmwatch-stop &
+}
+
+
+
+case $CMD in
+        "run") run ;;
+        "post-process") ;;
+esac
