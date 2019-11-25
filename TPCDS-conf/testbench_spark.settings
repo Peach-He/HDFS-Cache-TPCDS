@@ -1,0 +1,33 @@
+#spark.master=yarn
+spark.executor.memory=15G
+spark.yarn.executor.memoryOverhead=4G
+spark.executor.instances=24
+spark.driver.memory=8G
+spark.executor.cores=7
+spark.driver.extraJavaOptions=-Xss8m
+spark.executor.extraJavaOptions=-Xss8m
+#spark.hadoop.yarn.timeline-service.enabled=false
+#add
+#spark.sql.crossJoin.enabled=true
+spark.sql.broadcastTimeout=12800
+#spark.io.compression.codec=lzf
+spark.sql.shuffle.partitions=150
+#spark.memory.fraction=0.7
+#spark.sql.autoBroadcastJoinThreshold=31457280
+
+#spark.sql.orc.filterPushdown true
+#spark.sql.hive.metastorePartitionPruning true
+
+spark.serializer                 org.apache.spark.serializer.KryoSerializer
+#spark.kryo.referenceTracking	 false
+#spark.kryoserializer.buffer.max	 1024m
+
+#spark.eventLog.enabled           false
+#spark.eventLog.dir               hdfs://sr112:9000/spark/applicationHistory
+#spark.history.fs.logDirectory    hdfs://sr112:9000/spark/applicationHistory
+
+###################deep dive#########################
+#spark.executor.num=24
+spark.speculation=false
+spark.default.parallelism=150
+spark.network.timeout=12800s
